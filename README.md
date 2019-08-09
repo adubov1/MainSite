@@ -1,17 +1,16 @@
-# README
+# WIP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Not much to say *yet*
 
-Things you may want to cover:
+Things I may or may not cover in the future:
 
-* Ruby version
+* Ruby version -  2.6.0
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation - Postgres *<sub>only way to go </sub>*
 
 * Database initialization
 
@@ -21,4 +20,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
