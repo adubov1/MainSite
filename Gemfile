@@ -39,7 +39,7 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-bundler', '~> 1.6'
   gem 'capistrano-ext'
-  gem 'capistrano-rvm'
+  gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
 end
