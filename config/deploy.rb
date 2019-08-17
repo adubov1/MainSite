@@ -9,7 +9,9 @@ set :repo_url, "git@github.com:adubov1/MainSite.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/adm"
-
+set :puma_rackup, -> { File.join(current_path, 'config.ru') }
+set :puma_conf, "#{shared_path}/puma.rb"
+set :puma_role, :web
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -21,7 +23,6 @@ set :deploy_to, "/var/www/adm"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", "config/master.key"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -34,6 +35,16 @@ append :linked_files, "config/database.yml", "config/master.key"
 
 # Default value for keep_releases is 5
 set :keep_releases, 2
-
+before "deploy:assets:precompile", "deploy:yarn_install"
+namespace :deploy do
+  desc "Run rake yarn install"
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
+      end
+    end
+  end
+end
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure

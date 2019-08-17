@@ -9,12 +9,11 @@
 }
 
 html {
-  height: 100%;
 }
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: fit-content;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(241, 243, 245);

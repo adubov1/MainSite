@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.0'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+gem 'passenger'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -34,7 +35,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
-  gem "capistrano", "~> 3.11", require: false
+  gem "capistrano", "~> 3.6", require: true
+  gem 'capistrano3-puma'
+  gem 'capistrano-bundler', '~> 1.6'
+  gem 'capistrano-ext'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
 end
 
 group :development do
