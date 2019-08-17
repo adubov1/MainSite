@@ -9,9 +9,12 @@ set :repo_url, "git@github.com:adubov1/MainSite.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/adm"
-set :puma_rackup, -> { File.join(current_path, 'config.ru') }
-set :puma_conf, "#{shared_path}/puma.rb"
-set :puma_role, :web
+# set :puma_rackup, -> { File.join(current_path, 'config.ru') }
+# set :puma_conf, "#{shared_path}/puma.rb"
+# set :puma_role, :web
+set :rbenv_ruby, '2.6.0'
+# set :rvm_ruby_version, '2.6.0'
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
