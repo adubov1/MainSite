@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:adubov1/MainSite.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "~/adm"
+set :deploy_to, "~/site"
 # set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 # set :puma_conf, "#{shared_path}/puma.rb"
 # set :puma_role, :web
