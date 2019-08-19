@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: alexdub_production
-  username: alexdub
-  password: <%= ENV['ALEXDUB_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: prod_db
+  username: deploy
+  password: <%= ENV['DATABASE_PASSWORD'] %>
