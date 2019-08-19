@@ -14,7 +14,11 @@ set :deploy_to, "~/adm"
 # set :puma_role, :web
 set :rbenv_ruby, '2.6.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} /usr/bin/rbenv exec"
-
+set :default_env, {
+    'RAILS_MASTER_KEY':'8b9f62cecaf3213135e0ed682abb3001',
+    'SECRET_KEY_BASE':'8b9f62cecaf3213135e0ed682abb3001',
+    'DATABASE_PASSWORD':'alex2002'
+}
 
 # set :rvm_ruby_version, '2.6.0'
 
@@ -41,16 +45,16 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rben
 
 # Default value for keep_releases is 5
 set :keep_releases, 2
-before "deploy:assets:precompile", "deploy:yarn_install"
-namespace :deploy do
-  desc "Run rake yarn install"
-  task :yarn_install do
-    on roles(:web) do
-      within release_path do
-        execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
-      end
-    end
-  end
-end
+#before "deploy:assets:precompile", "deploy:yarn_install"
+# namespace :deploy do
+#   desc "Run rake yarn install"
+#   task :yarn_install do
+#     on roles(:web) do
+#       within release_path do
+#         execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
+#       end
+#     end
+#   end
+# end
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
