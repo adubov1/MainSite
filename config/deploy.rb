@@ -8,11 +8,14 @@ set :repo_url, "git@github.com:adubov1/MainSite.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/adm"
+set :deploy_to, "~/adm"
 # set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 # set :puma_conf, "#{shared_path}/puma.rb"
 # set :puma_role, :web
 set :rbenv_ruby, '2.6.0'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} /usr/bin/rbenv exec"
+
+
 # set :rvm_ruby_version, '2.6.0'
 
 # Default value for :format is :airbrussh.
