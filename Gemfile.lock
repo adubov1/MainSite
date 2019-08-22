@@ -283,6 +283,7 @@ PLATFORMS
 DEPENDENCIES
   ahoy_matey
   bcrypt_pbkdf
+  bundler (>= 2.0.2)
   byebug
   capistrano (~> 3.6)
   capistrano-bundler (~> 1.6)

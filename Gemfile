@@ -37,6 +37,7 @@ gem 'capistrano-passenger'
 gem 'capistrano-rails'
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
+gem 'bundler', ">= 2.0.2"
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
