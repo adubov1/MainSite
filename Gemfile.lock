@@ -108,6 +108,7 @@ GEM
     high_voltage (3.1.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    json (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -214,6 +215,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    travis-lint (2.0.0)
+      json
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -263,6 +266,7 @@ DEPENDENCIES
   sentry-raven
   spring
   spring-watcher-listen (~> 2.0.0)
+  travis-lint
   turbolinks (~> 5)
   web-console (>= 3.3.0)
   webdrivers
