@@ -32,6 +32,7 @@ module Alexdub
     end
     Raven.configure do |config|
       config.dsn = 'https://316545cdd52d43a0ba734f33ca5d9e6c:d068db8a2d8246c69755624f0d1df0eb@sentry.io/1539001'
+      config.environments = %w(staging production)
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
