@@ -13,5 +13,5 @@ install:
   - bundle install --jobs 3 --retry 3
   - bundle exec rails db:create
   - bundle exec rails db:migrate
-  - bundle exec assets:precompile
+  - bundle exec rails assets:precompile
   - bundle exec rails test
