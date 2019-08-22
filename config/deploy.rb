@@ -3,7 +3,7 @@ lock "~> 3.11.0"
 
 set :application, "MainSite"
 set :repo_url, "git@github.com:adubov1/MainSite.git"
-
+set :ssh_options, keys: ["config/deploy_id_rsa"] if File.exist?("config/deploy_id_rsa")
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

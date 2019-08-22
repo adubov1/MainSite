@@ -46,7 +46,7 @@ group :development do
   gem 'byebug', platforms: [:mri, :mingw]
   gem 'pry'
   gem 'pry-rails'
-  gem 'travis-lint'
+  gem 'travis'
 end
 
 group :test do

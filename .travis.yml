@@ -1,14 +1,22 @@
 language: ruby
 
 rvm:
-  - 2.6.0
+- 2.6.0
 
 services:
-  - postgresql
+- postgresql
 
 install:
-  - bundle install --jobs 3 --retry 3
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
-  - bundle exec rails assets:precompile
-  - bundle exec rails test
+- bundle install --jobs 3 --retry 3
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails assets:precompile
+- bundle exec rails test
+
+env:
+  global:
+    secure: GWGeWpcqwD9Z/fLqS6dFLr3hDr7VQk+JInCQZQLuWw788nkW0GRGvEQH8SmRIN1SXz/xjN/baLHbq1FSevj/sy4zv8LqRtTgKKXOt3kpKNyzo04y0249/Eci3vsaaa1N0tTTguB9DQbyx7umCu1VIYSajn0EEBsntY0G0zxGnM7/CsTgN4E1FqsahER1/LGMYz1SM3xUMSEaPNE+gSXNDzggTP+VEoedRGqhKEiRjoGcKq6gsanrizuI0zyccbrkA69yxD6MOdNwphZzpE0f27+3us8rjyH/a2y8XaXN2YlCN6i4b3jOWt1Hxx0lYrgXjJ1YY0M7EkZKXv2VKDTHBy6qAL7bwbT3pPkvCJWt5zPsZd8WuT5lfq2QiPqYOHJSOpL46Yu9B+V/7iyb2IIC3MMtd8zvBagRT4VDKliek/mh9/zkGHr8gGUli2BhoMsPHLnYprwXg8EDdl4S1kfYSaIW7//LGWlp2NFbnYf8XN7yVjdO/WzxN+mBl3A2pr7R+wnsRMe3tpsv8m7YiRLgMac5dwfgpIN6RP5Lxw5wa23dq1aMZNr4U7PTw9HLkRWx9wh+LXfcNrANCg+OxQ4DIt1jTYzykdHGmWempb2LF7qD3LLoBVD/5wePBY4okk6jygfKVvSfvGiEMUEKjJPubRwsf3B2n289o/DjmGnTWnY=
+
+after_success:
+  - "openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc_travis -d -a -out config/deploy_id_rsa"
+  - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap deploy"
