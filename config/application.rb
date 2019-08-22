@@ -23,11 +23,15 @@ module Alexdub
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.filter_parameters << :password
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'env.yml')
       YAML.load(File.open(env_file)).each do |key, value|
         ENV[key.to_s] = value
       end if File.exists?(env_file)
+    end
+    Raven.configure do |config|
+      config.dsn = 'https://316545cdd52d43a0ba734f33ca5d9e6c:d068db8a2d8246c69755624f0d1df0eb@sentry.io/1539001'
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

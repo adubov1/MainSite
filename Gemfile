@@ -18,6 +18,8 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
 gem 'high_voltage', '~> 3.1'
+gem 'ahoy_matey'
+gem "sentry-raven"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -27,18 +29,12 @@ gem 'high_voltage', '~> 3.1'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-
-group :development, :production, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry'
-  gem "capistrano", "~> 3.6", require: true
-  gem 'capistrano-bundler', '~> 1.6'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-passenger'
-  gem 'capistrano-rails'
-
-end
+gem "capistrano", "~> 3.6", require: true
+gem 'capistrano-bundler', '~> 1.6'
+gem 'capistrano-rbenv'
+gem 'capistrano-passenger'
+gem 'capistrano-rails'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -47,6 +43,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'byebug', platforms: [:mri, :mingw]
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :test do
