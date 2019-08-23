@@ -18,7 +18,7 @@ set :default_env, {
     'SECRET_KEY_BASE':'8b9f62cecaf3213135e0ed682abb3001',
     'DATABASE_PASSWORD':'alex2002'
 }
-
+set :bundle_flags, '--no-deployment'
 # set :rvm_ruby_version, '2.6.0'
 
 # Default value for :format is :airbrussh.
@@ -44,12 +44,12 @@ set :default_env, {
 
 # Default value for keep_releases is 5
 set :keep_releases, 2
-before "bundler:install", "fix:bundle"
-namespace :fix do
-  desc "Fix Gemfile.lock"
+before "bundler:install", "misc:bundle"
+namespace :misc do
+  desc "art"
   task :bundle do
     on roles(:web) do
-      execute("cd #{release_path} && mv Gemfile.lock Gemfile.lock.old && bundle lock --no-deployment")
+      execute("figlet bundy")
     end
   end
 end
