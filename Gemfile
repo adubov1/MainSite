@@ -31,7 +31,6 @@ gem "sentry-raven"
 # Reduces boot times through caching; required in config/boot.rb
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem "capistrano", "~> 3.6", require: true
-gem 'capistrano-bundler', '~> 1.6'
 gem 'capistrano-rbenv'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
