@@ -44,10 +44,10 @@ set :default_env, {
 
 # Default value for keep_releases is 5
 set :keep_releases, 2
-before "deploy:assets:precompile", "deploy:bundle_fix"
-namespace :deploy do
+before "bundler:install", "fix:bundle"
+namespace :fix do
   desc "Fix Gemfile.lock"
-  task :bundle_fix do
+  task :bundle do
     execute("cd #{release_path} && mv Gemfile.lock Gemfile.lock.old && bundle lock --no-deployment")
   end
 end
