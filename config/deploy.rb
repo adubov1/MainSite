@@ -48,7 +48,9 @@ before "bundler:install", "fix:bundle"
 namespace :fix do
   desc "Fix Gemfile.lock"
   task :bundle do
-    execute("cd #{release_path} && mv Gemfile.lock Gemfile.lock.old && bundle lock --no-deployment")
+    on roles(:web) do
+      execute("cd #{release_path} && mv Gemfile.lock Gemfile.lock.old && bundle lock --no-deployment")
+    end
   end
 end
 # Uncomment the following to require manually verifying the host key before first deploy.
