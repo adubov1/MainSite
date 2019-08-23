@@ -1,6 +1,4 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
-
 set :application, "MainSite"
 set :repo_url, "git@github.com:adubov1/MainSite.git"
 set :ssh_options, keys: ["config/deploy_id_rsa"] if File.exist?("config/deploy_id_rsa")
@@ -46,16 +44,12 @@ set :default_env, {
 
 # Default value for keep_releases is 5
 set :keep_releases, 2
-#before "deploy:assets:precompile", "deploy:yarn_install"
-# namespace :deploy do
-#   desc "Run rake yarn install"
-#   task :yarn_install do
-#     on roles(:web) do
-#       within release_path do
-#         execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
-#       end
-#     end
-#   end
-# end
+before "deploy:assets:precompile", "deploy:bundle_fix"
+namespace :deploy do
+  desc "Fix Gemfile.lock"
+  task :bundle_fix do
+    execute("cd #{release_path} && mv Gemfile.lock Gemfile.lock.old && bundle lock --no-deployment")
+  end
+end
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
