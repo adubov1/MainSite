@@ -108,7 +108,7 @@ GEM
     faraday_middleware (0.13.1)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.11.1)
-    geocoder (1.5.1)
+    geocoder (1.6.3)
     gh (0.15.1)
       addressable (~> 2.4.0)
       backports
@@ -282,7 +282,6 @@ DEPENDENCIES
   bundler (>= 1.17.3)
   byebug
   capistrano (~> 3.6)
-  capistrano-bundler (~> 1.6)
   capistrano-passenger
   capistrano-rails
   capistrano-rbenv
