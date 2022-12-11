@@ -14,7 +14,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "body-parser": "^1.19.0",
     "bulma": "^0.7.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fake-auth": "^0.0.4",
     "history": "^4.9.0",
     "jquery": "^3.4.1",
