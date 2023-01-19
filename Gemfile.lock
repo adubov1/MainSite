@@ -95,7 +95,7 @@ GEM
     childprocess (1.0.1)
       rake (< 13.0)
     coderay (1.1.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.10)
     crass (1.0.4)
     device_detector (1.0.2)
     ed25519 (1.2.4)
@@ -116,11 +116,11 @@ GEM
       multi_json (~> 1.0)
       net-http-persistent (~> 2.9)
       net-http-pipeline
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     high_voltage (3.1.2)
     highline (1.7.10)
-    i18n (1.6.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     json (2.2.0)
     launchy (2.4.3)
@@ -140,7 +140,7 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.11.3)
+    minitest (5.17.0)
     multi_json (1.13.1)
     multipart-post (2.1.1)
     net-http-persistent (2.9.4)
@@ -250,7 +250,7 @@ GEM
     turbolinks-source (5.2.0)
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     web-console (4.0.1)
       actionview (>= 6.0.0)
@@ -271,7 +271,7 @@ GEM
     websocket-extensions (0.1.4)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.1.9)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
@@ -282,7 +282,6 @@ DEPENDENCIES
   bundler (>= 1.17.3)
   byebug
   capistrano (~> 3.6)
-  capistrano-bundler (~> 1.6)
   capistrano-passenger
   capistrano-rails
   capistrano-rbenv
